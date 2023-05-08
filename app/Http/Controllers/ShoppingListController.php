@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\shopping_list as shopping_listModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\CompletedShopping as CompletedShoppingModel;
+use App\Models\completed_shopping_lists as completed_shopping_listsModel;
 
 class ShoppingListController extends Controller
 {
@@ -87,7 +87,7 @@ class ShoppingListController extends Controller
             unset($dask_datum['created_at']);
             unset($dask_datum['updated_at']);
 
-            $r=CompletedShoppingModel::create($dask_datum);
+            $r=completed_shopping_listsModel::create($dask_datum);
 
             if ($r === null) {
                 throw new \Exception('');
